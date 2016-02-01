@@ -15,14 +15,14 @@ public class ClubApplication {
 		/* All fields present. */
 		Person wayneRooney = new Person("Rooney", "Wayne", "Mark");
 		System.out.println(wayneRooney.getFirstName());
-		System.out.println(wayneRooney.getLastName());
+		System.out.println(wayneRooney.getSecondName());
 		System.out.println(wayneRooney.getSurname());
 		System.out.println(wayneRooney.show());
 		
 		/* Last Name missing */
 		Person ryanGiggs = new Person("Giggs", "Ryan", null); 
 		System.out.println(ryanGiggs.getFirstName());
-		System.out.println(ryanGiggs.getLastName());
+		System.out.println(ryanGiggs.getSecondName());
 		System.out.println(ryanGiggs.getSurname());
 		System.out.println(ryanGiggs.show());
 	}

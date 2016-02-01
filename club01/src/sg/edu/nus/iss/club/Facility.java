@@ -11,7 +11,7 @@ public class Facility {
 		this(null, null);
 	}
 	
-	public Facility(String name) {
+	public Facility(String name) throws IllegalArgumentException {
 		this(name, null);
 	}
 	
@@ -28,28 +28,38 @@ public class Facility {
 		this.name = name;
 	}
 	
-	private void setDescription(String description) throws IllegalArgumentException {
-		if (description == null) {
-			throw new IllegalArgumentException("Description cannot be null.");
-		}
+	/**
+	 * Setter for the description attribute.
+	 * @param description The description about the facility.
+	 */
+	private void setDescription(String description){
 		this.description = description;
 	}
 	
 	
 	/* Public methods */
+	
+	/*
+	 * Getter for the name of the facility.
+	 */
 	public String getName() {
 		return name;
 	}
 	
+	/*
+	 * The description about the facility.
+	 */
 	public String getDescription() {
 		return description;
 	}
 	
+	/*
+	 * Method to display the name of the method & its description if present.
+	 */
 	public String show() {
-		String returnValue = name;
 		if(description != null){
-			returnValue = returnValue + " " + description;
+			return "Facility Name: " + name + "\nDescription: " + description;
 		}
-		return returnValue;
+		return "Facility Name: " + name;
 	}
 }
