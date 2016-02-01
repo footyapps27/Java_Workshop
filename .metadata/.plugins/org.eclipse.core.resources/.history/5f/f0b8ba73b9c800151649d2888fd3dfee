@@ -1,0 +1,33 @@
+package sg.edu.nus.iss.club.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import sg.edu.nus.iss.club.Member;
+
+public class MemberTest {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testMemberName(){
+		Member firstMember = new Member("Lin", "Boyuan", null, 1);
+		assertEquals("Member First Name failed", "Boyuan", firstMember.getFirstName());
+		assertEquals("Member Surname Name failed", "Lin", firstMember.getSurName());
+		assertEquals("Member Second Name failed", null, firstMember.getSecondName());
+	}
+}

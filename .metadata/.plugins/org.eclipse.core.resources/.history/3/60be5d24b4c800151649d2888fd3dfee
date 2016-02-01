@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package sg.edu.nus.iss.club;
+
+/**
+ * @author SMRT
+ *
+ */
+public class Member extends Person {
+
+	/* Instance variables of the class declared below */
+	private int memberNumber;
+	
+	/* Constructors */
+	
+	public Member(String surname, String firstName, String surname, int memberNumber){
+		
+	}
+	
+	/* Private Methods */
+	
+	private void setMemberNumber(int memberNumber){
+		this.memberNumber = memberNumber;
+	}
+	
+	/* Public methods */
+	
+	/*
+	 * Getter for the surName attribute.
+	 */
+	public String getSurname() {
+		return surname;
+	}
+}

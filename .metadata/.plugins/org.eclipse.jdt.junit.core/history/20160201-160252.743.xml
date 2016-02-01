@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="MemberTest" project="club01" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="sg.edu.nus.iss.club.test.MemberTest" time="0.0">
+    <testcase name="testMemberName" classname="sg.edu.nus.iss.club.test.MemberTest" time="0.0"/>
+    <testcase name="testMemberNumber" classname="sg.edu.nus.iss.club.test.MemberTest" time="0.0"/>
+    <testcase name="testNullSecondName" classname="sg.edu.nus.iss.club.test.MemberTest" time="0.0"/>
+  </testsuite>
+</testrun>

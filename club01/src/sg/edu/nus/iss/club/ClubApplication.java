@@ -5,10 +5,13 @@ public class ClubApplication {
 	public static void main(String[] args) {
 
 		/* Test for Person class */
-		ClubApplication.testPersonClass();
+		//ClubApplication.testPersonClass();
 		
 		/* Test for Facility class */
-		ClubApplication.testFacilityClass();
+		//ClubApplication.testFacilityClass();
+		
+		/* Test for Member class */
+		ClubApplication.testMemberClass();
 	}
 
 	public static void testPersonClass() {
@@ -16,14 +19,14 @@ public class ClubApplication {
 		Person wayneRooney = new Person("Rooney", "Wayne", "Mark");
 		System.out.println(wayneRooney.getFirstName());
 		System.out.println(wayneRooney.getSecondName());
-		System.out.println(wayneRooney.getSurname());
+		System.out.println(wayneRooney.getSurName());
 		System.out.println(wayneRooney.show());
 		
 		/* Last Name missing */
 		Person ryanGiggs = new Person("Giggs", "Ryan", null); 
 		System.out.println(ryanGiggs.getFirstName());
 		System.out.println(ryanGiggs.getSecondName());
-		System.out.println(ryanGiggs.getSurname());
+		System.out.println(ryanGiggs.getSurName());
 		System.out.println(ryanGiggs.show());
 	}
 	
@@ -33,5 +36,14 @@ public class ClubApplication {
 		
 		Facility footballFacility = new Facility("Football", null);
 		System.out.println(footballFacility.show());
+	}
+	
+	public static void testMemberClass() {
+		/* All fields present. */
+		Member wayneRooney = new Member("Rooney", "Wayne", "Mark", 31);
+		System.out.println(wayneRooney.getFirstName());
+		System.out.println(wayneRooney.getSecondName());
+		System.out.println(wayneRooney.getSurName());
+		System.out.println(wayneRooney.show());
 	}
 }

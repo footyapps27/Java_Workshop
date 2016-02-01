@@ -57,6 +57,11 @@ public class Facility {
 	 * Method to display the name of the method & its description if present.
 	 */
 	public String show() {
+		return toString();
+	}
+	
+	@Override 
+	public String toString() {
 		if(description != null){
 			return "Facility Name: " + name + "\nDescription: " + description;
 		}
