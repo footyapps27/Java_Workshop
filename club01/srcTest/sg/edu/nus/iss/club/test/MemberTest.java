@@ -8,6 +8,11 @@ import org.junit.Test;
 
 import sg.edu.nus.iss.club.Member;
 
+/**
+ * @author SMRT
+ *
+ */
+
 public class MemberTest {
 
 	@Before

@@ -1,17 +1,13 @@
 package sg.edu.nus.iss.club;
 
+/**
+ * @author SMRT
+ * @description: Class containing the main method.
+ */
 public class ClubApplication {
 
 	public static void main(String[] args) {
 
-		/* Test for Person class */
-		//ClubApplication.testPersonClass();
-		
-		/* Test for Facility class */
-		//ClubApplication.testFacilityClass();
-		
-		/* Test for Member class */
-		ClubApplication.testMemberClass();
 	}
 
 	public static void testPersonClass() {

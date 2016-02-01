@@ -1,5 +1,9 @@
 package sg.edu.nus.iss.club;
 
+/**
+ * @author SMRT
+ * @description: Class depicting a particular Facility.
+ */
 public class Facility {
 
 	/* Instance variables of the class declared below */
