@@ -4,29 +4,38 @@
 package sg.edu.nus.iss.club;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 /**
  * @author SMRT
  * @description: Class representing Club object in real world.
  */
+
 public class Club {
 
-	/* Instance Variables */
+	/********************************************************/
+	//Instance Variables
+	/********************************************************/
 	
 	/*
 	 * ArrayList for holding the list of Members in the club.
 	 */
 	private ArrayList<Member> arrMember;
+	
+	private HashMap<String, Facility> dictFacilities;
 
-	
-	/* Constructors */
+	/********************************************************/
+	//Constructors
+	/********************************************************/
 	public Club(){
-		//Initialize the array list.
-		arrMember = new ArrayList<Member>();
+		//Initialize the array list & hashmap.
+		arrMember = new ArrayList<>();
+		dictFacilities = new HashMap<>();
 	}
-	
-	/* Public Methods */
+	/********************************************************/
+	//Public Methods
+	/********************************************************/
 	
 	/*
 	 * Method to add members to the club.
@@ -86,6 +95,55 @@ public class Club {
 		    iterator.remove();
 		  }
 		}
-		System.out.println(arrMember);
+	}
+	
+	/**
+	 * Method to get a particular Facility object available in the Club.
+	 * @param name The name of the facility that we are querying for.
+	 * @return The details of the Facility, if found.
+	 * 			Will return 'null' if the facility is not available.
+	 */
+	public Facility getFacility(String name) {
+		if(dictFacilities.containsKey(name)){
+			return dictFacilities.get(name);
+		}
+		return null;
+	}
+	
+	/**
+	 * Method to get the complete list of facilities available at the club.
+	 * @return An Array List containing objects of the facilities present at the club.
+	 */
+	public ArrayList<Facility> getFacilities() {
+		return new ArrayList<Facility>(dictFacilities.values()) ;
+	}
+
+	/**
+	 * Method to add a new facility to the club.
+	 * @param facility The facility that needs to be added to the club.
+	 */
+	public void addFacility(Facility facility) {//TODO-Create the Facility object inside this class itself.
+		if(facility != null){
+			dictFacilities.put(facility.getName(), facility);
+		}
+	}
+	
+	/**
+	 * Method to remove a particular facility by its name.
+	 * @param name The name of the facility that needs to be removed.
+	 */
+	public void removeFacility(String name) {
+		if(dictFacilities.containsKey(name)){
+			dictFacilities.remove(name);
+		}
+	}
+	
+	/**
+	 * Display the list of facilities available at the club. Displays in the console.
+	 */
+	public void showFacilities() {
+		for(Facility facility : this.getFacilities()){
+			System.out.println(facility.getName());
+		}
 	}
 }

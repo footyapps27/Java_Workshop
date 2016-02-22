@@ -15,16 +15,29 @@ public class Facility {
 		this(null, null);
 	}
 	
+	/**
+	 * @param name
+	 * @throws IllegalArgumentException
+	 */
 	public Facility(String name) throws IllegalArgumentException {
 		this(name, null);
 	}
 	
+	/**
+	 * @param name
+	 * @param description
+	 * @throws IllegalArgumentException
+	 */
 	public Facility(String name, String description) throws IllegalArgumentException {
 		super();
 		setName(name);
 		setDescription(description);
 	}
-	/* Private methods */
+
+	/**
+	 * @param name
+	 * @throws IllegalArgumentException
+	 */
 	private void setName(String name) throws IllegalArgumentException {
 		if (name == null) {
 			throw new IllegalArgumentException("Name cannot be null.");

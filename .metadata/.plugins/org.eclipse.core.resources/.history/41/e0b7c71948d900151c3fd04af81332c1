@@ -1,0 +1,23 @@
+package sg.edu.nus.iss.club;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class BookingRegister {
+
+	/********************************************************/
+	// Instance Variables
+	/********************************************************/
+	private HashMap<Facility, ArrayList<Booking>> dictBookingsForFacility;
+	
+	/********************************************************/
+	// Constructor
+	/********************************************************/
+	public BookingRegister(HashMap<Facility, ArrayList<Booking>> dictBookingsForFacility){
+		this.dictBookingsForFacility = dictBookingsForFacility;
+	}
+	
+	/********************************************************/
+	// Constructor
+	/********************************************************/
+}

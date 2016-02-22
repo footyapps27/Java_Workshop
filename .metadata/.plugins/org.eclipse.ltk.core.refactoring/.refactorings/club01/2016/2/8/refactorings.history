@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;secondBooking&apos; in &apos;sg.edu.nus.iss.club.test.BookingTest.testOverlaps()&apos; to &apos;Booking3&apos;&#x0A;- Original project: &apos;club01&apos;&#x0A;- Original element: &apos;sg.edu.nus.iss.club.test.BookingTest.testOverlaps().secondBooking&apos;&#x0A;- Renamed element: &apos;secondBooking&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;secondBooking&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/srcTest&lt;sg.edu.nus.iss.club.test{BookingTest.java[BookingTest~testOverlaps@secondBooking!1089!1165!1097!1109!QBooking;!0!false" name="Booking3" references="true" stamp="1455962086128" version="1.0"/>
+</session>

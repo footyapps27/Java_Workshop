@@ -1,0 +1,18 @@
+package com.nus.iss.iooperation;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Main objMain = new Main();
+	}
+	
+	public void writeStringToFile(String stringToWrite, String fileName){
+		
+	}
+
+	public String readFromFile(String fileName) {
+		
+		return "";
+	}
+}

@@ -1,0 +1,232 @@
+package sg.edu.nus.iss.club.test;
+
+import static org.junit.Assert.*;
+
+import java.time.LocalDateTime;
+import java.util.Date;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import sg.edu.nus.iss.club.BadBookingException;
+import sg.edu.nus.iss.club.Booking;
+import sg.edu.nus.iss.club.Facility;
+import sg.edu.nus.iss.club.Member;
+
+public class BookingTest {
+
+	Member boyuan;
+	Member sanjay;
+	Facility swimming;
+	Facility tennis;
+	LocalDateTime now;
+	@Before
+	public void setUp() throws Exception {
+		boyuan = new Member("Lin", "Boyuan", null, 0);
+		sanjay = new Member("Choo", "Sanjay", null, 1);
+		swimming = new Facility("Swimming");
+		tennis = new Facility("Tennis");
+		now = LocalDateTime.now();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		boyuan = null;
+		swimming = null;
+		now = null;
+	}
+
+	@Test
+	public void testOverlapsForNoOverlapping() {
+		// Object 1
+		Date startDate1 = parseDate("2016-02-20");
+		Date endDate1 = parseDate("2016-02-21");
+
+		// First Member
+		
+
+		Booking Booking1 = null;
+
+		try {
+			Booking1 = new Booking(boyuan, swimming, startDate1, endDate1);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		// Object 2
+		Date startDate2 = parseDate("2016-02-22");
+		Date endDate2 = parseDate("2016-02-23");
+
+		// Second Member
+		Member joshua = new Member("Joshua", "Furtado", null, 1);
+		Facility swimming2 = new Facility("Swimming", null);
+		Booking Booking2 = null;
+		try {
+			Booking2 = new Booking(joshua, swimming2, startDate2, endDate2);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		// Test 1 - For same Start & End Date
+		assertEquals(true, Booking2.overlaps(Booking1));
+	}
+
+	@Test
+	public void testOverlaps() {
+		// Object 1
+		Date startDate1 = parseDate("2016-02-20");
+		Date endDate1 = parseDate("2016-02-20");
+
+		// First Member
+		Member boyuan = new Member("Lin", "Boyuan", null, 0);
+		Facility swimming = new Facility("Swimming", null);
+
+		Booking Booking1 = null;
+
+		try {
+			Booking1 = new Booking(boyuan, swimming, startDate1, endDate1);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		// Object 2
+		Date startDate2 = parseDate("2016-02-20");
+		Date endDate2 = parseDate("2016-02-20");
+
+		// Second Member
+		Member joshua = new Member("Joshua", "Furtado", null, 1);
+		Facility swimming2 = new Facility("Swimming", null);
+		Booking Booking2 = null;
+		try {
+			Booking2 = new Booking(joshua, swimming2, startDate2, endDate2);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		// Test 1 - For same Start & End Date
+		assertEquals(true, Booking2.overlaps(Booking1));
+
+		// Object 3
+		Date startDate3 = parseDate("2016-02-20");
+		Date endDate3 = parseDate("2016-02-20");
+
+		// Third Member
+		Member sanjay = new Member("Sanjay", "Choo", null, 2);
+		Facility swimming3 = new Facility("Swimming", null);
+		Booking Booking3 = null;
+		try {
+			Booking3 = new Booking(sanjay, swimming3, startDate3, endDate3);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		// Test 2 - For different start & end date
+		assertEquals(false, Booking3.overlaps(Booking1));
+
+		// Object 4
+		Date startDate4 = parseDate("2016-02-20");
+		Date endDate4 = parseDate("2016-02-20");
+		Booking Booking4 = null;
+		try {
+			Booking4 = new Booking(sanjay, swimming3, startDate4, endDate4);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		// Test 3 - For time in between another booking
+		assertEquals(true, Booking4.overlaps(Booking1));
+
+		// TODO - Write test for check of different facility booking.
+		Facility tennis = new Facility("Tennis", null);
+		Booking Booking5 = null;
+		try {
+			Booking5 = new Booking(sanjay, tennis, startDate4, endDate4);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		assertEquals(false, Booking5.overlaps(Booking1));
+	}
+
+	@Test
+	public void testToString() {
+		// Object 1
+		Date startDate1 = parseDate("2016-02-20");
+		Date endDate1 = parseDate("2016-02-20");
+
+		// First Member
+		Member boyuan = new Member("Lin", "Boyuan", null, 0);
+		Facility swimming = new Facility("Swimming", null);
+		Booking Booking1 = null;
+		try {
+			Booking1 = new Booking(boyuan, swimming, startDate1, endDate1);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println(Booking1.show());
+	}
+
+	/********************************************************/
+	// Tests for Constructor
+	/********************************************************/
+	@Test
+	public void testConstructorForEmptyMember() {
+		Booking Booking1 = null;
+		try {
+			Booking1 = new Booking(null, swimming, now, now.plusDays(1));
+			Booking1.getClass();
+			fail("Exception not thrown for null Member Name");
+		} catch (BadBookingException e) {
+			assertNotNull(e);
+		}
+	}
+
+	@Test
+	public void testConstructorForEmptyFacility() {
+		Booking Booking1 = null;
+		try {
+			Booking1 = new Booking(boyuan, null, now, now.plusDays(1));
+			Booking1.getClass();
+			fail("Exception not thrown for null Facility Name");
+		} catch (BadBookingException e) {
+			assertNotNull(e);
+		}
+	}
+
+	@Test
+	public void testConstructorForEmptyStartDate() {
+		Booking Booking1 = null;
+		try {
+			Booking1 = new Booking(boyuan, swimming, null, now);
+			Booking1.getClass();
+			fail("Exception not thrown for null Start Date");
+		} catch (BadBookingException e) {
+			assertNotNull(e);
+		}
+	}
+
+	@Test
+	public void testConstructorForEmptyEndDate() {
+		Booking Booking1 = null;
+		try {
+			Booking1 = new Booking(boyuan, swimming, now, null);
+			Booking1.getClass();
+			fail("Exception not thrown for null End Date");
+		} catch (BadBookingException e) {
+			assertNotNull(e);
+		}
+	}
+
+	@Test
+	public void testConstructorForEndDateBeforeStartDate() {
+		Booking Booking1 = null;
+		try {
+			Booking1 = new Booking(boyuan, swimming, now, now.minusDays(1));
+			Booking1.getClass();
+			fail("Exception not thrown for start date later than end date.");
+		} catch (BadBookingException e) {
+			assertNotNull(e);
+		}
+	}
+}

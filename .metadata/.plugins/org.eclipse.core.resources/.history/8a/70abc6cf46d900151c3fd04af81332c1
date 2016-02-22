@@ -1,0 +1,19 @@
+package sg.edu.nus.iss.club;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.omg.CORBA.PRIVATE_MEMBER;
+
+public class BookingRegister {
+
+	/********************************************************/
+	// Instance Variables
+	/********************************************************/
+	private HashMap<Facility, ArrayList<Booking>>
+	
+	/********************************************************/
+	// Public Methods
+	/********************************************************/
+	
+}

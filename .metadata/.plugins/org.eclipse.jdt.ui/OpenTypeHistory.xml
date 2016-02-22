@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=club01/src&lt;sg.edu.nus.iss.club{Facility.java[Facility" modifiers="1" timestamp="1454292011000"/>
+<typeInfo handle="=club01/src&lt;sg.edu.nus.iss.club{Facility.java[Facility" modifiers="1" timestamp="1454993606000"/>
+<typeInfo handle="=club01/src&lt;sg.edu.nus.iss.club{Person.java[Person" modifiers="1" timestamp="1454315969000"/>
+<typeInfo handle="=club01/src&lt;sg.edu.nus.iss.club{Member.java[Member" modifiers="1" timestamp="1455519857000"/>
+<typeInfo handle="=club01/src&lt;sg.edu.nus.iss.club{Club.java[Club" modifiers="1" timestamp="1455524099000"/>
+<typeInfo handle="=club01/src&lt;sg.edu.nus.iss.club{Booking.java[Booking" modifiers="1" timestamp="1456137423000"/>
+<typeInfo handle="=club01/\/Library\/Java\/JavaVirtualMachines\/jdk1.8.0_65.jdk\/Contents\/Home\/jre\/lib\/rt.jar&lt;java.lang(Exception.class[Exception" modifiers="33" timestamp="1444172124000"/>
+<typeInfo handle="=club01/src&lt;sg.edu.nus.iss.club{BookingRegister.java[BookingRegister" modifiers="1" timestamp="1456134221000"/>
 </typeInfoHistroy>

@@ -9,23 +9,29 @@ package sg.edu.nus.iss.club;
  */
 public class Member extends Person {
 
-	/* Instance variables of the class declared below */
+	/********************************************************/
+	//Instance Variables
+	/********************************************************/
 	private int memberNumber;
 	
-	/* Constructors */
-	
+	/********************************************************/
+	//Constructors
+	/********************************************************/
 	public Member(String surName, String firstName, String secondName, int memberNumber){
 		super(surName,firstName,secondName);
 		setMemberNumber(memberNumber);
 	}
 	
-	/* Private Methods */
-	
+	/********************************************************/
+	//Private Methods
+	/********************************************************/
 	private void setMemberNumber(int memberNumber){
 		this.memberNumber = memberNumber;
 	}
 	
-	/* Public methods */
+	/********************************************************/
+	//Public Methods
+	/********************************************************/
 	
 	/*
 	 * Getter for the surName attribute.

@@ -1,0 +1,84 @@
+/**
+ * 
+ */
+package sg.edu.nus.iss.club.test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import sg.edu.nus.iss.club.Booking;
+import sg.edu.nus.iss.club.BookingRegister;
+import sg.edu.nus.iss.club.Facility;
+import sg.edu.nus.iss.club.Member;
+
+/**
+ * @author Samrat
+ *
+ */
+public class BookingRegisterTest {
+
+	Member boyuan;
+	Member sanjay;
+	Facility swimming;
+	Facility tennis;
+	LocalDateTime now;
+	BookingRegister register;
+	
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+		boyuan = new Member("Lin", "Boyuan", null, 0);
+		sanjay = new Member("Choo", "Sanjay", null, 1);
+		swimming = new Facility("Swimming");
+		tennis = new Facility("Tennis");
+		now = LocalDateTime.now();
+		register = new BookingRegister(new HashMap<Facility, ArrayList<Booking>>());
+	}
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	public void tearDown() throws Exception {
+		boyuan = null;
+		sanjay = null;
+		swimming = null;
+		tennis = null;
+		now = null;
+		register = null;
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddBookingForNoException() {
+		try {
+			register.addBooking(boyuan, swimming, now, now.plusHours(1));
+		} catch (Exception e) {
+			fail("Exception thrown for normal addBooking");
+		}
+	}
+
+	@Test
+	public void testGetBooking() {
+
+	}
+
+	@Test
+	public void testRemoveBooking() {
+
+	}
+}

@@ -1,0 +1,122 @@
+package sg.edu.nus.iss.club;
+
+import java.time.LocalDateTime;
+
+/**
+ * @author Samrat
+ *
+ */
+public class Booking {
+
+	/********************************************************/
+	// Instance Variables
+	/********************************************************/
+	private Member member;
+	private Facility facility;
+
+	private LocalDateTime startDate;
+	private LocalDateTime endDate;
+
+	/********************************************************/
+	// Setters & getters
+	/********************************************************/
+	public Member getMember() {
+		return member;
+	}
+
+	public void setMember(Member member) throws IllegalArgumentException {
+		if (member == null) {
+			this.member = member;
+		}
+		throw new IllegalArgumentException();
+	}
+
+	public Facility getFacility() {
+		return facility;
+	}
+
+	public void setFacility(Facility facility) {
+		this.facility = facility;
+	}
+
+	public LocalDateTime getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(LocalDateTime startDate) {
+		this.startDate = startDate;
+	}
+
+	public LocalDateTime getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(LocalDateTime endDate) {
+		this.endDate = endDate;
+	}
+
+	/********************************************************/
+	// Constructors
+	/********************************************************/
+	public Booking(Member member, Facility facility, LocalDateTime startDate, LocalDateTime endDate)
+			throws BadBookingException {
+		super();
+
+		if (!(member == null)) {
+			this.member = member;
+		} else {
+			throw new BadBookingException("Member object missing during Booking");
+		}
+
+		if (!(facility == null)) {
+			this.facility = facility;
+		} else {
+			throw new BadBookingException("Facility object missing during Booking");
+		}
+
+		if (!(startDate == null)) {
+			this.startDate = startDate;
+		} else {
+			throw new BadBookingException("Start Date object missing during Booking");
+		}
+
+		if (!(endDate == null)) {
+			this.endDate = endDate;
+		} else {
+			throw new BadBookingException("End Date object missing during Booking");
+		}
+
+		if (startDate.isAfter(endDate)) {
+			throw new BadBookingException("End Date specified is before start date");
+		}
+	}
+
+	/********************************************************/
+	// Public Methods
+	/********************************************************/
+	// TODO - Documentation
+	public Boolean overlaps(Booking booking) {
+		if (this.facility.getName() == booking.facility.getName()) {
+			if ((this.startDate.isEqual(booking.startDate)) || (this.endDate.isEqual(booking.endDate))
+					|| ((this.startDate.isAfter(booking.startDate)) && (this.endDate.isBefore(booking.endDate)))
+					|| ((this.startDate.isBefore(booking.startDate)) && (this.endDate.isAfter(booking.endDate)))) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * Method displays the complete details about the Booking. Details include
+	 * member name, facility name, start date & end date.
+	 */
+	public String show() {
+		return toString();
+	}
+
+	@Override
+	public String toString() {
+		return ("Member Name: " + member.toString() + "\nFacility Name: " + facility.toString() + "\nStart Date: "
+				+ startDate + "\nEnd Date: " + endDate.toString());
+	}
+}

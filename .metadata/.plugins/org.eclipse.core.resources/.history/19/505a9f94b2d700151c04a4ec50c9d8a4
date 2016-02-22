@@ -1,0 +1,80 @@
+package sg.edu.nus.iss.club;
+
+import java.util.Date;
+
+/**
+ * @author Samrat
+ *
+ */
+public class Booking {
+	
+	/********************************************************/
+	//Instance Variables
+	/********************************************************/
+	private Member member;
+	private Facility facility;
+	
+	private Date startDate;
+	private Date endDate;
+	
+	/********************************************************/
+	//Setters & getters
+	/********************************************************/
+	public Member getMember() {
+		return member;
+	}
+
+	public void setMember(Member member) throws IllegalArgumentException {
+		if(member == null){
+			this.member = member;
+		}
+		throw new IllegalArgumentException();
+	}
+
+	public Facility getFacility() {
+		return facility;
+	}
+
+	public void setFacility(Facility facility) {
+		this.facility = facility;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	/********************************************************/
+	//Constructors
+	/********************************************************/
+	public Booking(Member member, Facility facility, Date startDate, Date endDate) {
+		super();
+		this.member = member;
+		this.facility = facility;
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
+	/********************************************************/
+	//Public Methods
+	/********************************************************/
+	public Boolean overlaps(Booking booking) {
+		if(this.startDate.compareTo(booking.startDate) == 0 || 
+				(this.startDate.compareTo(booking.startDate) > 0){
+			return true;
+		}
+		return false;
+		//Starts at the same time
+		//Start of one is before another finishes
+	}
+}

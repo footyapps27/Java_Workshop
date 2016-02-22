@@ -1,0 +1,9 @@
+package sg.edu.nus.iss.club;
+
+public class BadBookingException extends Exception {
+
+	public BadBookingException(String message) {
+		// TODO Auto-generated constructor stub
+		super(message);
+	}
+}

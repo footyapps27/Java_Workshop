@@ -1,0 +1,39 @@
+package sg.edu.nus.iss.club;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class BookingRegister {
+
+	/********************************************************/
+	// Instance Variables
+	/********************************************************/
+	private HashMap<Facility, ArrayList<Booking>> dictBookingsForFacility;
+
+	/********************************************************/
+	// Getters & Setters
+	/********************************************************/
+	public HashMap<Facility, ArrayList<Booking>> getDictBookingsForFacility() {
+		return dictBookingsForFacility;
+	}
+
+	public void setDictBookingsForFacility(HashMap<Facility, ArrayList<Booking>> dictBookingsForFacility) {
+		this.dictBookingsForFacility = dictBookingsForFacility;
+	}
+	
+	/********************************************************/
+	// Constructors
+	/********************************************************/
+	public BookingRegister(HashMap<Facility, ArrayList<Booking>> dictBookingsForFacility){
+		setDictBookingsForFacility(dictBookingsForFacility);
+	}
+	
+	/********************************************************/
+	// Public Methods
+	/********************************************************/
+	public void addBooking(Member member, Facility facility){
+		
+	}
+	
+	public 
+}
